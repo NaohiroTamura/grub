@@ -83,6 +83,8 @@ grub_core_cmd_insmod (struct grub_command *cmd __attribute__ ((unused)),
   else
     mod = grub_dl_load (argv[0]);
 
+  grub_printf ("tamura - grub_core_cmd_insmod(%s)\n", argv[0]);
+
   if (mod)
     grub_dl_ref (mod);
 

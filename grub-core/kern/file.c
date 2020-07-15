@@ -113,6 +113,8 @@ grub_file_open (const char *name, enum grub_file_type type)
   file->name = grub_strdup (name);
   grub_errno = GRUB_ERR_NONE;
 
+  grub_printf ("tamura - ARRAY_SIZE (grub_file_filters): %lu\n", ARRAY_SIZE (grub_file_filters));
+
   for (filter = 0; file && filter < ARRAY_SIZE (grub_file_filters);
        filter++)
     if (grub_file_filters[filter])

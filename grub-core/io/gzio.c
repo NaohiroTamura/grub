@@ -1158,6 +1158,8 @@ initialize_tables (grub_gzio_t gzio)
 static grub_file_t
 grub_gzio_open (grub_file_t io, enum grub_file_type type)
 {
+  grub_printf ("tamura - grub_gzio_open(%s)\n", io->name);
+
   grub_file_t file;
   grub_gzio_t gzio = 0;
 
@@ -1339,6 +1341,8 @@ grub_ssize_t
 grub_zlib_decompress (char *inbuf, grub_size_t insize, grub_off_t off,
 		      char *outbuf, grub_size_t outsize)
 {
+  grub_printf ("tamura - grub_zlib_decompress is called.\n");
+
   grub_gzio_t gzio = 0;
   grub_ssize_t ret;
 
@@ -1366,6 +1370,8 @@ grub_ssize_t
 grub_deflate_decompress (char *inbuf, grub_size_t insize, grub_off_t off,
 			 char *outbuf, grub_size_t outsize)
 {
+  grub_printf ("tamura - grub_deflate_decompress is called.\n");
+
   grub_gzio_t gzio = 0;
   grub_ssize_t ret;
 
